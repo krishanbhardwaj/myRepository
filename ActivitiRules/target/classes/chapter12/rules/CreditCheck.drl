@@ -1,0 +1,12 @@
+package main.resources.chapter12.rules;
+
+import main.java.org.bpmnwithactiviti.chapter12.model.LoanApplicant;
+
+rule "CreditCheckRule"
+    
+	when
+		la: LoanApplicant(income > (2 * loanAmount))
+	then
+		la.setCheckCreditOk(true);
+
+end
